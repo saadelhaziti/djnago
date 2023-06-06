@@ -8,7 +8,7 @@ class Student(models.Model):
     cne = models.CharField(max_length=10)
     cni = models.CharField(max_length=12)
     email = models.EmailField()
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, editable=False)
     date_naissance = models.DateField()
     adresse = models.CharField(max_length=200)
     specialite_bac = models.CharField(max_length=100)
@@ -23,6 +23,8 @@ class Student(models.Model):
 
     def __str__(self):
         return self.nom
+    def __str__(self):
+        return f"{self.prenom} {self.nom} - {self.email}"
 
 
 
@@ -34,7 +36,7 @@ class verfeed(models.Model):
     cne = models.CharField(max_length=10)
     cni = models.CharField(max_length=12)
     email = models.EmailField()
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, editable=False)
     date_naissance = models.DateField()
     adresse = models.CharField(max_length=200,default=None)
     specialite_bac = models.CharField(max_length=100)
@@ -49,6 +51,8 @@ class verfeed(models.Model):
     
     def __str__(self):
         return self.nom
+    def __str__(self):
+        return f"{self.prenom} {self.nom} - {self.email}"
     
 
 
