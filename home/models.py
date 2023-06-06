@@ -8,7 +8,7 @@ class Student(models.Model):
     cne = models.CharField(max_length=10)
     cni = models.CharField(max_length=12)
     email = models.EmailField()
-    password = models.CharField(max_length=100,widget=models.PasswordInput())
+    password = models.CharField(max_length=100)
     date_naissance = models.DateField()
     adresse = models.CharField(max_length=200)
     specialite_bac = models.CharField(max_length=100)
